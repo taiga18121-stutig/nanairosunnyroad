@@ -1,6 +1,0 @@
-[eval exp="f._system_preview_ks='bad.ks'"] 
-[preload  storage="./data/bgimage/IMG_4624.JPG"  ]
-[preload  storage="./data/fgimage/chara/2/被写体_26.png"  ]
-[preload  storage="./data/fgimage/chara/2/被写体_27.png"  ]
-[preload  storage="./data/fgimage/chara/2/被写体_28.png"  ]
-[return] 

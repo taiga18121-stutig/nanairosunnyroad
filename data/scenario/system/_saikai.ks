@@ -1,7 +1,0 @@
-[preload  storage="./data/bgimage/IMG_4589.jpg"  ]
-[preload  storage="./data/fgimage/chara/1/被写体_10.png"  ]
-[preload  storage="./data/fgimage/chara/1/被写体_11.png"  ]
-[preload  storage="./data/fgimage/chara/1/被写体_13.png"  ]
-[preload  storage="./data/fgimage/chara/1/aa9b4d36-7467-46db-a964-25d09b5e1b63.png"  ]
-[preload  storage="./data/fgimage/chara/1/被写体_14.png"  ]
-[return]
