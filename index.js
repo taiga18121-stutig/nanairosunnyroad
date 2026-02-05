@@ -1,1 +1,3 @@
-tyrano.plugin.kag.init();
+$(function(){
+    tyrano.plugin.kag.init();
+});
