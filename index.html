@@ -5,40 +5,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
   
-  <link rel="stylesheet" href="./tyrano/tyrano.css">
-  <link rel="stylesheet" href="./tyrano/animate.css">
+  <link rel="stylesheet" href="tyrano/tyrano.css">
+  <link rel="stylesheet" href="tyrano/animate.css">
   
-  <script type="text/javascript" src="./tyrano/libs/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="./tyrano/libs/howler.js"></script>
-  <script type="text/javascript" src="./data/system/KeyConfig.js"></script>
+  <script type="text/javascript" src="tyrano/libs/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="tyrano/libs/howler.js"></script>
+  <script type="text/javascript" src="data/system/KeyConfig.js"></script>
   
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.tag.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.tag_audio.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.tag_ext.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.tag_system.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.tag_vchat.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.tag_ar.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.menu.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.screen_full.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.event.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.key_mouse.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.layer.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.save.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.parser.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.rider.js"></script>
-  <script type="text/javascript" src="./tyrano/plugins/kag/kag.studio.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.tag.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.tag_audio.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.tag_ext.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.tag_system.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.tag_vchat.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.tag_ar.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.menu.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.screen_full.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.event.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.key_mouse.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.layer.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.save.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.parser.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.rider.js"></script>
+  <script type="text/javascript" src="tyrano/plugins/kag/kag.studio.js"></script>
 </head>
-<body onselectstart="return false" oncontextmenu="return false" style="user-select:none;-webkit-user-select:none;">
-  <div id="tyrano_base" class="tyrano_base" style="overflow:hidden"></div>
+<body onselectstart="return false" oncontextmenu="return false">
+  <div id="tyrano_base" class="tyrano_base"></div>
   <script type="text/javascript">
     $(function(){
-      // TYRANOが定義されているか、そして初期化関数があるか慎重にチェック
-      if(typeof TYRANO !== 'undefined' && TYRANO.kag && TYRANO.kag.init){
-        TYRANO.kag.init();
-      } else {
-        console.error("エンジン本体の読み込みに失敗しています。パスを確認してください。");
-      }
+      // 読み込み完了まで少し待機する処理を追加
+      setTimeout(function(){
+        if(typeof TYRANO !== 'undefined'){
+          TYRANO.kag.init();
+        } else {
+          alert("まだエンジンが読み込めていません。GitHubのフォルダ名（tyrano）がすべて小文字か確認してください。");
+        }
+      }, 500);
     });
   </script>
 </body>
