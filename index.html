@@ -8,6 +8,10 @@
     
     <script type="text/javascript" src="./tyrano/libs/jquery-3.6.0.min.js"></script>
     
+    <script type="text/javascript">
+        window.jQuery.isElectron = function() { return false; };
+    </script>
+
     <script type="text/javascript" src="./tyrano/tyrano.js"></script>
     <script type="text/javascript" src="./tyrano/tyrano.base.js"></script>
     
@@ -28,7 +32,13 @@
     <script type="text/javascript" src="./tyrano/plugins/kag.studio_v6.js"></script>
     <script type="text/javascript" src="./tyrano/plugins/kag.key_mouse.js"></script>
     
-    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            setTimeout(function(){
+                tyrano.plugin.kag.init();
+            }, 200);
+        });
+    </script>
 </head>
 <body onselectstart="return false" oncontextmenu="return false">
     <div id="tyrano_base" class="tyrano_base" style="overflow:hidden" unselectable="on"></div>
