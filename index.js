@@ -1,0 +1,1 @@
+tyrano.plugin.kag.init();
