@@ -3,6 +3,7 @@
 <head>
     <title>Nanairo Sunny Road</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     
     <link rel="stylesheet" href="tyrano/tyrano.css">
     <link rel="stylesheet" href="tyrano/animate.css">
@@ -28,18 +29,18 @@
     <script src="tyrano/plugins/kag/kag.rider.js"></script>
     <script src="tyrano/plugins/kag/kag.studio.js"></script>
 </head>
-<body onselectstart="return false">
+<body style="background-color:black;">
     <div id="tyrano_base" class="tyrano_base"></div>
     <script>
         $(function(){
-            // 無理やり数秒待ってからエンジンを動かす
+            // GitHubの反映遅延を考慮して3秒待ってから起動
             setTimeout(function(){
                 if(typeof TYRANO !== 'undefined'){
                     TYRANO.kag.init();
                 } else {
-                    document.body.innerHTML = "<h1>エンジン読み込み失敗</h1><p>tyranoフォルダへのアクセスが拒否されているか、ファイルが存在しません。</p>";
+                    document.body.innerHTML = "<h2 style='color:white;text-align:center;padding-top:20%;'>エンジン読み込みエラー</h2><p style='color:white;text-align:center;'>tyrano/plugins/kag/ 内のファイルにアクセスできません。<br>GitHubのフォルダ名がすべて小文字の 'tyrano' であるか再確認してください。</p>";
                 }
-            }, 2000);
+            }, 3000);
         });
     </script>
 </body>
