@@ -16,6 +16,7 @@
     <script type="text/javascript" src="./tyrano/tyrano.js"></script>
     <script type="text/javascript" src="./tyrano/tyrano.base.js"></script>
     <script type="text/javascript" src="./tyrano/libs.js"></script>
+    <script type="text/javascript" src="./tyrano/lang.js"></script>
     
     <script type="text/javascript" src="./tyrano/plugins/kag.js"></script>
     <script type="text/javascript" src="./tyrano/plugins/kag.menu.js"></script>
@@ -36,9 +37,8 @@
     
     <script type="text/javascript">
         $(function(){
-            // すべてのファイル読み込みを少し待ってから開始
             setTimeout(function(){
-                if(typeof tyrano !== 'undefined'){
+                if(typeof tyrano !== 'undefined' && typeof tyrano_lang !== 'undefined'){
                     tyrano.plugin.kag.init();
                 }
             }, 300);
