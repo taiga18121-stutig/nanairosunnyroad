@@ -10,6 +10,6 @@
 [call storage="system/plugin_third.ks"]
 
 ; 【ここが最重要】フォルダ名(system/)とアンダースコア(_)を両方入れます
-[jump storage="system/_title_screen.ks"]
+[jump storage="title_screen_new.ks"]
 
 [s]
