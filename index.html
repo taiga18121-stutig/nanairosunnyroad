@@ -4,8 +4,10 @@
   <title>Loading...</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  
   <link rel="stylesheet" href="./tyrano/tyrano.css">
   <link rel="stylesheet" href="./tyrano/animate.css">
+  
   <script type="text/javascript" src="./tyrano/libs/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="./tyrano/libs/howler.js"></script>
   <script type="text/javascript" src="./data/system/KeyConfig.js"></script>
@@ -27,16 +29,15 @@
   <script type="text/javascript" src="./tyrano/plugins/kag/kag.rider.js"></script>
   <script type="text/javascript" src="./tyrano/plugins/kag/kag.studio.js"></script>
 </head>
-<body onselectstart="return false" oncontextmenu="false" style="user-select:none;">
-  <div id="tyrano_base" class="tyrano_base" style="overflow:hidden;"></div>
+<body onselectstart="return false" oncontextmenu="return false" style="user-select:none;-webkit-user-select:none;">
+  <div id="tyrano_base" class="tyrano_base" style="overflow:hidden"></div>
   <script type="text/javascript">
     $(function(){
-      // TYRANO が読み込まれているかチェック
-      if(typeof TYRANO !== 'undefined'){
+      // TYRANOが定義されているか、そして初期化関数があるか慎重にチェック
+      if(typeof TYRANO !== 'undefined' && TYRANO.kag && TYRANO.kag.init){
         TYRANO.kag.init();
       } else {
-        // もしこれが出るなら、tyranoフォルダの場所が違います
-        document.write("エンジン(tyranoフォルダ)が見つかりません。フォルダ構成を確認してください。");
+        console.error("エンジン本体の読み込みに失敗しています。パスを確認してください。");
       }
     });
   </script>
