@@ -9,11 +9,13 @@
     <script type="text/javascript" src="./tyrano/libs/jquery-3.6.0.min.js"></script>
     
     <script type="text/javascript">
+        // 環境エラーの強制回避
         window.jQuery.isElectron = function() { return false; };
     </script>
 
     <script type="text/javascript" src="./tyrano/tyrano.js"></script>
     <script type="text/javascript" src="./tyrano/tyrano.base.js"></script>
+    <script type="text/javascript" src="./tyrano/libs.js"></script>
     
     <script type="text/javascript" src="./tyrano/plugins/kag.js"></script>
     <script type="text/javascript" src="./tyrano/plugins/kag.menu.js"></script>
@@ -34,9 +36,12 @@
     
     <script type="text/javascript">
         $(function(){
+            // すべてのファイル読み込みを少し待ってから開始
             setTimeout(function(){
-                tyrano.plugin.kag.init();
-            }, 200);
+                if(typeof tyrano !== 'undefined'){
+                    tyrano.plugin.kag.init();
+                }
+            }, 300);
         });
     </script>
 </head>
